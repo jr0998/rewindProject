@@ -20,6 +20,6 @@ function reverseString(str) {
 }
 //Display String
 function displayString(str) {
-    document.getElementById("msg").innerHTML = str;
-    document.getElementById("alert").classList.add("visible");
+    document.getElementById("msg").innerHTML = `Your String Reversed is:  ${str}`;
+    document.getElementById("alert").classList.remove("invisible");
 }
