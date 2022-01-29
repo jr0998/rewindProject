@@ -55,17 +55,48 @@
             <div class="row row-cols-1 row-cols-lg-2 py-5 ">
                 <div class="col-lg-8">
                     <pre class="line-numbers"> <code class="language-javascript">
-                        //call hello world
-                        function helloWorld(){
-                         alert("Hello World");
+                        //get String From document
+                        function getString() {
+                            document.getElementById("alert").classList.add("invisible");
+                            let strInput = document.getElementById("stringInput").value;
+                            let reverseStr;
+                        
+                            reverseStr = reverseString(strInput);
+                        
+                            displayString(reverseStr);
+                        }
+                        
+                        //Reverse the String
+                        function reverseString(str) {
+                            let reverseStr = [];
+                        
+                            for (let i = str.length - 1; i >= 0; i--) {
+                                reverseStr += str[i];
+                            }
+                            return reverseStr;
+                        }
+                        //Display String
+                        function displayString(str) {
+                            document.getElementById("msg").innerHTML = `Your String Reversed is:  ${str}`;
+                            document.getElementById("alert").classList.remove("invisible");
                         }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <h5>getString</h5>
+                    <p>This is the main function that is called on the button click.
+                        this gets the string entered by the user and stores it in a variable
+                        and calls the next two functions.
+                    </p>
+                    <h5>reverseString</h5>
+                    <p>reverseString takes in a string variable, then through a for loop
+                        reverses the string into another variable that is then returned.
+                    </p>
+                    <h5>displayString</h5>
+                    <p>displayString takes in a variable and then displays it to the
+                        msg section and makes that container visible.
+                    </p>
                 </div>
             </div>
         </div>
